@@ -1,0 +1,243 @@
+:root {
+    --primario : #9c27b0;
+    --primari0scuro: #89119d;
+    --secundario: #ffce00;
+    --secundari0scuro: rgb(233,287,2);
+    --blanco: #fff;
+    --negro: #000;
+    
+    --fuente-principal: 'Staatliches', cursive;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+/* Globales */
+body {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    background-color: var(--primario);
+}
+p {
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+a {
+    text-decoration: none;
+}
+img {
+    width: 100%;
+}
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+h1, h2, h3 {
+    text-align: center;
+    color: var(--secundario);
+    font-family: var(--fuente-principal);
+    word-spacing: 3px;
+}
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3.2rem;
+}
+h3 {
+    font-size: 2.4rem;
+}
+/*header*/
+.header {
+    display: flex;
+    justify-content: center;
+}
+.header__logo {
+    margin: 3rem 0;
+}
+/*footer*/
+.footer {
+    margin-top: 2rem;
+    background-color: var(--primari0scuro);
+}
+.footer__texto {
+    font-family: var(--fuente-principal);
+    color: var(--blanco);
+    text-align: center;
+    font-size: 2.2rem;
+    padding: .5rem 0;
+}
+/*navegacion*/
+.navegacion {
+    background-color: var(--primari0scuro);
+    display: flex;
+    justify-content: center;
+    /* gap: 2rem; Nueva forma no soportada bien por varios navegadores*/
+    padding: 1rem 0;
+}
+.navegacion__enlace {
+    color: var(--blanco);
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-family: var(--fuente-principal);
+    margin-right: 2rem;
+}
+.navegacion__enlace:last-of-type {
+    margin-right: 0;
+}
+.navegacion__enlace:hover,
+.navegacion__enlace--activo {
+    color: var(--secundario);
+}
+/*grid*/
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/*productos*/
+.producto{
+    background-color: var(--primari0scuro);
+    padding: 1rem;
+}
+.producto__nombre{
+    font-size: 4rem;
+}
+.producto__precio{
+    font-size: 2.8rem;
+    color: var(--secundario);
+}
+.producto__nombre,
+.producto__precio {
+    text-align: center;
+    margin: 1rem 0;
+    font-family: var(--fuente-principal);
+}
+/*Graficos*/
+
+.grafico {
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1 / 3;
+}
+.grafico--camisas {
+    grid-row: 2 / 3;
+    background-image: url(../img/grafico1.jpg);
+}
+.grafico--node {
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8 / 9;
+}
+@media (min-width: 768px) {
+    .grafico--node {
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+/*nosotros*/
+.nosotros {
+    display: flex;
+    gap: 1rem;
+    margin: 0 1rem;
+}
+.nosotros__parrafos--1 {
+    margin-top: 0;
+}
+.nosotros__imagen {
+    height: 100%;
+}
+@media (max-width: 768px) {
+    .nosotros {
+        flex-direction: column;
+        flex-direction: column-reverse;
+    }
+}
+/* bloques */
+.bloques {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+.bloque {
+    text-align: center;
+}
+.bloque__titulo {
+    margin: 0 auto;
+}
+@media (max-width: 768px) {
+    .bloques {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/*producto*/
+.camisa {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    margin: 0 1rem;
+}
+@media (max-width: 768px) {
+    .camisa {
+        grid-template-columns: auto;
+    }
+}
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+@media (max-width: 450px) {
+    .formulario {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+.formulario__campo {
+    background-color: transparent;
+    color: var(--blanco);
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2rem;
+    appearance: none;
+    border: 2rem solid var(--primari0scuro);
+}
+.formulario__campo--option{
+    background-color: var(--primario);
+}
+.formulario__submit {
+    background-color: var(--secundario);
+    font-size: 2rem;
+    border: none;
+    font-family: var(--fuente-principal);
+    padding: 2rem;
+    transition: background-color, font-size  .3s ease;
+    grid-column: 1 / 3;
+}
+@media (min-width: 451px) and (max-width: 767px) {
+    .formulario__campo {
+        font-size: 1.5rem;
+        padding: 1.5rem;
+        border: 1.5rem solid var(--primari0scuro);
+    }
+}
+@media (max-width: 450px) {
+    .formulario__submit {
+        grid-column: 1 / 2;
+    }
+}
+.formulario__submit:hover {
+    cursor: pointer;
+    background-color: var(--secundari0scuro);
+    font-size: 2.4rem;
+}
